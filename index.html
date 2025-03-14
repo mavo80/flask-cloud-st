@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Storage Simulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #2a36a1;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2a36a1;
+        }
+
+        .file-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .file-list li {
+            padding: 8px;
+            background: #e9ecef;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cloud Storage Simulation</h1>
+
+        <!-- Upload Form -->
+        <div class="form-section">
+            <h2>Upload File</h2>
+            <form action="/upload" method="POST">
+                <input type="text" name="filename" placeholder="Enter file name" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+
+
+        <!-- Update Form -->
+        <div class="form-section">
+            <h2>Update File</h2>
+            <form action="/update" method="POST">
+                <input type="text" name="old_name" placeholder="Old filename" required>
+                <input type="text" name="new_name" placeholder="New filename" required>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+
+        <!-- Delete Form -->
+        <div class="form-section">
+            <h2>Delete File</h2>
+            <form action="/delete" method="POST">
+                <input type="text" name="filename" placeholder="Enter file name to delete" required>
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
